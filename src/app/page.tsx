@@ -1,134 +1,82 @@
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#000] text-slate-300 font-sans selection:bg-blue-500/30">
-      <div className="fixed inset-0 -z-10 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-      
-      {/* Navbar */}
-      <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-black/50 backdrop-blur-md">
-        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="font-bold text-white tracking-tighter text-xl">Tusar.Dev</div>
-          <nav className="flex gap-6 text-sm font-medium text-slate-400">
-            <Link href="#about" className="hover:text-white transition-colors">About</Link>
-            <Link href="#projects" className="hover:text-white transition-colors">Work</Link>
-            <Link href="#contact" className="hover:text-white transition-colors">Contact</Link>
-          </nav>
-        </div>
-      </header>
-
-      <main className="max-w-5xl mx-auto px-6 py-24 space-y-32">
-        {/* Hero */}
-        <section id="about" className="space-y-8 animate-in fade-in duration-1000 slide-in-from-bottom-8">
-          <div className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-sm font-medium text-blue-300">
-            <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2 animate-pulse"></span>
-            Available for new opportunities
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-500">
-            Building fast, scalable <br className="hidden md:block" /> web applications.
-          </h1>
-          <p className="max-w-2xl text-lg md:text-xl text-slate-400 leading-relaxed">
-            I'm <span className="text-white font-medium">Tusar Imran Anik</span>. I specialize in Next.js, Node.js, and serverless infrastructure to create high-performance MVPs and production-ready systems.
+    <div className="min-h-screen bg-[#fafafa] text-[#111] dark:bg-[#111] dark:text-[#eee] font-sans selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black transition-colors duration-300">
+      <main className="max-w-2xl mx-auto px-6 py-24 sm:py-32">
+        
+        {/* Header / Intro */}
+        <header className="mb-20">
+          <h1 className="text-3xl font-bold mb-6 tracking-tight">Tusar Imran Anik</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+            Software Engineer building fast, scalable MVPs and production systems. Focused on Next.js, Node.js, and serverless architecture.
           </p>
-          <div className="flex flex-wrap gap-4 pt-4">
-            <a href="#projects" className="rounded-full bg-white text-black px-6 py-3 font-medium hover:bg-slate-200 transition-colors">
-              View My Work
+          <div className="flex flex-wrap gap-6 text-sm font-medium">
+            <a href="https://github.com/tusarimrananik" target="_blank" rel="noopener noreferrer" className="border-b border-gray-300 hover:border-black dark:border-gray-700 dark:hover:border-white pb-0.5 transition-colors">
+              GitHub
             </a>
-            <a href="https://github.com/tusarimrananik" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 bg-white/5 px-6 py-3 font-medium hover:bg-white/10 transition-colors">
-              GitHub Profile
+            <a href="https://twitter.com/tsr_anik" target="_blank" rel="noopener noreferrer" className="border-b border-gray-300 hover:border-black dark:border-gray-700 dark:hover:border-white pb-0.5 transition-colors">
+              Twitter
+            </a>
+            <a href="mailto:tusarimrananik@gmail.com" className="border-b border-gray-300 hover:border-black dark:border-gray-700 dark:hover:border-white pb-0.5 transition-colors">
+              Email
             </a>
           </div>
-        </section>
+        </header>
 
-        {/* Tech Stack */}
-        <section className="space-y-6">
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-slate-500">Core Technologies</h2>
-          <div className="flex flex-wrap gap-3">
-            {['Next.js', 'React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Neon DB', 'Prisma', 'Tailwind CSS', 'Vercel'].map((tech) => (
-              <span key={tech} className="px-4 py-2 rounded-lg border border-white/10 bg-white/5 text-sm font-medium text-slate-300 cursor-default hover:bg-white/10 transition-colors">
-                {tech}
-              </span>
-            ))}
-          </div>
-        </section>
-
-        {/* Bento Grid Projects */}
-        <section id="projects" className="space-y-12 scroll-mt-24">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter text-white">Selected Projects</h2>
-            <p className="text-slate-400">A look at some of my recent full-stack builds.</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* EditGen */}
-            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 transition-all hover:bg-white/[0.07]">
-              <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative z-10 space-y-4">
-                <div className="flex justify-between items-center">
-                  <h3 className="text-2xl font-bold text-white">EditGen</h3>
-                  <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors text-white">
-                    ↗
-                  </a>
-                </div>
-                <p className="text-slate-400 leading-relaxed min-h-[80px]">
-                  A high-performance SaaS platform built with the Next.js App Router. Features a custom manual payment webhook integration via Telegram, allowing admins to approve transactions seamlessly.
-                </p>
-                <div className="flex flex-wrap gap-2 pt-4">
-                  {['Next.js', 'Neon Postgres', 'Prisma', 'Auth.js'].map((t) => (
-                    <span key={t} className="text-xs font-medium px-2.5 py-1 rounded bg-black/50 border border-white/5 text-slate-300">{t}</span>
-                  ))}
-                </div>
+        {/* Projects */}
+        <section className="mb-20">
+          <h2 className="text-xl font-semibold mb-8 tracking-tight">Selected Work</h2>
+          <div className="space-y-12">
+            <article className="group">
+              <div className="flex justify-between items-baseline mb-3">
+                <h3 className="text-lg font-medium text-black dark:text-white">EditGen</h3>
+                <span className="text-sm text-gray-400 dark:text-gray-500">2026</span>
               </div>
-            </div>
-
-            {/* RUET Lab Report */}
-            <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 transition-all hover:bg-white/[0.07]">
-              <div className="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative z-10 space-y-4">
-                <div className="flex justify-between items-center">
-                  <h3 className="text-2xl font-bold text-white">RUET Lab Report</h3>
-                  <a href="https://ruet-lab-report-generator.vercel.app/" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors text-white">
-                    ↗
-                  </a>
-                </div>
-                <p className="text-slate-400 leading-relaxed min-h-[80px]">
-                  A complex templating and layout generator. Allows users to construct lab reports with drag-and-drop reordering, dynamic section generation, and highly specialized content editors.
-                </p>
-                <div className="flex flex-wrap gap-2 pt-4">
-                  {['React', 'Drag & Drop', 'Dynamic UI'].map((t) => (
-                    <span key={t} className="text-xs font-medium px-2.5 py-1 rounded bg-black/50 border border-white/5 text-slate-300">{t}</span>
-                  ))}
-                </div>
+              <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                SaaS platform built with Next.js App Router, Prisma, and Neon Postgres. Features a customized manual payment webhook flow via Telegram for seamless admin approvals.
+              </p>
+              <div className="flex flex-wrap gap-2 text-xs font-mono text-gray-500 dark:text-gray-400">
+                <span className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded">Next.js</span>
+                <span className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded">Neon DB</span>
+                <span className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded">Prisma</span>
               </div>
-            </div>
+            </article>
+
+            <article className="group">
+              <div className="flex justify-between items-baseline mb-3">
+                <h3 className="text-lg font-medium text-black dark:text-white flex items-center gap-2">
+                  <a href="https://ruet-lab-report-generator.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-4 decoration-gray-300 dark:decoration-gray-600">
+                    RUET Lab Report ↗
+                  </a>
+                </h3>
+                <span className="text-sm text-gray-400 dark:text-gray-500">2026</span>
+              </div>
+              <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                A highly interactive templating and layout generator. Allows users to construct academic lab reports with drag-and-drop reordering, dynamic sections, and robust component editors.
+              </p>
+              <div className="flex flex-wrap gap-2 text-xs font-mono text-gray-500 dark:text-gray-400">
+                <span className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded">React</span>
+                <span className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded">Tailwind</span>
+              </div>
+            </article>
           </div>
         </section>
 
-        {/* Contact */}
-        <section id="contact" className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-12 text-center space-y-6">
-          <h2 className="text-3xl font-bold tracking-tighter text-white">Let's work together</h2>
-          <p className="max-w-xl mx-auto text-slate-400">
-            Whether you need a fast MVP to validate your market or a scalable full-stack application, I'm ready to help you build it.
-          </p>
-          <div className="pt-4">
-            <a href="mailto:tusarimrananik@gmail.com" className="inline-block rounded-full bg-white text-black px-8 py-4 font-bold hover:bg-slate-200 transition-colors shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]">
-              tusarimrananik@gmail.com
-            </a>
+        {/* Philosophy */}
+        <section className="mb-20">
+          <h2 className="text-xl font-semibold mb-6 tracking-tight">Philosophy</h2>
+          <div className="prose prose-gray dark:prose-invert text-gray-600 dark:text-gray-400 leading-relaxed space-y-4">
+            <p>
+              I believe in shipping fast to validate ideas, then iterating ruthlessly based on real user feedback. My ultimate goal is financial freedom through building valuable, scalable products.
+            </p>
+            <p>
+              When I code, I prefer clean architecture and straightforward solutions over complex abstractions. I try to explain technical concepts in layman's terms and maintain a relentless focus on the end-user experience.
+            </p>
           </div>
         </section>
+        
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-white/5 bg-black">
-        <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} Tusar Imran Anik. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="https://github.com/tusarimrananik" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
-            <a href="https://twitter.com/tsr_anik" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
